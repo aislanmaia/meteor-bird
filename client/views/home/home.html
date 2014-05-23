@@ -1,9 +1,12 @@
 <template name="home">
 {{#if currentUser}}
-<section class="col-sm-12">
-  {{> post}}
-  {{> timeline}}
-</section>
+  <aside class="col-sm-4">
+    {{> profile}}
+  </aside>
+  <section class="col-sm-8">
+    {{> post}}
+    {{> timeline}}
+  </section>
 {{else}}
   <div class="text-center">
     <h1>Meteor Bird</h1>

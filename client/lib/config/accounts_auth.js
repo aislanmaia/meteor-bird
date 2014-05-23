@@ -4,6 +4,7 @@ Accounts.ui.config({
     fieldLabel: 'Nome'
   }],
   requestPermissions: {
-    facebook: ['email', 'user_about_me']
+    facebook: ['email', 'user_about_me'],
+    twitter: ['profile_image_url']
   }
 });
