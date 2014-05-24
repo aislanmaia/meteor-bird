@@ -9,4 +9,18 @@ Router.map(function () {
       };
     }
   });
+
+  this.route('user', {
+    path: '/user/:_id',
+    template: 'user',
+    layoutTemplate: 'layout',
+    data: function () {
+      var _id = this.params._id;
+      return {
+        user: Meteor.users.findOne({_id: _id}),
+        posts: Posts.list(_id)
+      };
+    }
+  });
 });
+
