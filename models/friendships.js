@@ -41,6 +41,10 @@ Friendships.followers = function (friendId) {
   return this.find({friendId: friendId}).count();
 };
 
+Friendships.followersAndFollowings = function (_id) {
+  return this.find({ $or: [{userId: _id}, {friendId: _id}] });
+};
+
 // Funções executadas somente no lado servidor
 Meteor.methods({
   follow: function (friendId) {
