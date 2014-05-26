@@ -1,7 +1,7 @@
 Posts = new Meteor.Collection('posts');
 
-Posts.list = function (userId) {
-  return this.find({userId: userId});
+Posts.list = function (userIds) {
+  return this.find({userId: { "$in": userIds }}, {sort: { time: -1, name: 1 }});
 };
 
 Meteor.methods({

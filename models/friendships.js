@@ -23,6 +23,16 @@ Friendships.isFollowing = function (friendId) {
   });
 };
 
+Friendships.timelineIds = function (userId) {
+  var timelineIds = this.find({
+    userId: userId
+  }).map(function (f) {
+    return f.friendId;
+  });
+  timelineIds.push(userId);
+  return timelineIds;
+};
+
 Friendships.followings = function (userId) {
   return this.find({userId: userId}).count();
 };
