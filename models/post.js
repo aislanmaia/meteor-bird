@@ -6,7 +6,7 @@ Posts.list = function (userId) {
 
 Meteor.methods({
   publish: function (message, username) {
-    this.insert({
+    Posts.insert({
       message: message,
       date: new Date(),
       userId: Meteor.userId(),
