@@ -23,6 +23,14 @@ Friendships.isFollowing = function (friendId) {
   });
 };
 
+Friendships.followings = function (userId) {
+  return this.find({userId: userId}).count();
+};
+
+Friendships.followers = function (friendId) {
+  return this.find({friendId: friendId}).count();
+};
+
 // Funções executadas somente no lado servidor
 Meteor.methods({
   follow: function (friendId) {
